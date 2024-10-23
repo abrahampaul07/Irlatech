@@ -1,0 +1,15 @@
+body {
+    background-image: url(../assets/bg4.jpg);
+    background-repeat: no-repeat;
+    background-size: 170% 100%;
+}
+
+.learn-more-button {
+    transition: background-color 0.2s ease, transform 0.3s ease;
+  }
+  
+  .learn-more-button:hover {
+    background-color: #11724c; /* Change to a darker or different shade */
+    transform: scale(1.05); /* Slightly scale the button */
+  }
+  

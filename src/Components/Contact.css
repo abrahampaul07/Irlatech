@@ -1,0 +1,11 @@
+/* src/components/Contact.css */
+body {
+    background-image: url('../assets/your-background-image.jpg'); /* Change to your background image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(10px);
+  }
+  
