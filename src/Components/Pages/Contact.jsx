@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <>
       <Layout>
-        <div className="flex items-center justify-center min-h-screen p-4 pt-20">
+        <div className="flex items-center justify-center min-h-screen p-4 ">
           {" "}
           {/* Add pt-20 to create space below the navbar */}
           <div
