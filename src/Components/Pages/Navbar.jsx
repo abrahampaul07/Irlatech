@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'; 
+import { Link, useLocation } from 'react-router-dom';
 import image from "../../assets/i.png";
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar starts */}
-      <nav className={`fixed w-full z-10 transition-all duration-300 ${scrolled ? 'bg-teal-950 bg-opacity-95' : 'bg-transparent'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-teal-950 bg-opacity-95' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
@@ -64,13 +64,13 @@ const Navbar = () => {
               <div className="flex space-x-4">
                 {['Home', 'Services', 'Contact'].map((item) => (
                   <div className="relative group" key={item}>
-                    <a 
-                      href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                    <Link 
+                      to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
                       onClick={() => setActiveLink(item)} 
                       className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium ${activeLink === item ? 'text-white' : ''}`}
                     >
                       {item}
-                    </a>
+                    </Link>
                     <span 
                       className={`absolute left-0 right-0 bottom-[-3px] h-0.5 bg-emerald-800 transition-transform duration-300 ease-in-out ${activeLink === item ? 'scale-x-50' : 'scale-x-0 group-hover:scale-x-50'}`} 
                     />
@@ -85,9 +85,9 @@ const Navbar = () => {
         <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={toggleMenu}></div>
         <div className={`fixed inset-y-0 left-0 transform bg-gray-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:hidden w-64`}>
           <div className="flex flex-col mt-16">
-            <a href="/" onClick={() => { setActiveLink('Home'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Home</a>
-            <a href="/services" onClick={() => { setActiveLink('Services'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Services</a>
-            <a href="/contact" onClick={() => { setActiveLink('Contact'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Contact</a>
+            <Link to="/" onClick={() => { setActiveLink('Home'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Home</Link>
+            <Link to="/services" onClick={() => { setActiveLink('Services'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Services</Link>
+            <Link to="/contact" onClick={() => { setActiveLink('Contact'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Contact</Link>
           </div>
         </div>
       </nav>
