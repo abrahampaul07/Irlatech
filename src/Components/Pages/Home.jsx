@@ -44,7 +44,7 @@ const Home = () => {
       </video>
 
       {/* Dimmer overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10" />
+      <div className="absolute inset-0 bg-black opacity-70 z-10" />
 
       <Layout>
         <div className="flex items-center justify-center h-screen"> 
@@ -72,9 +72,9 @@ const Home = () => {
               style={{ fontFamily: "Poppins, sans-serif"}}
             >
               Transforming technology to{" "}
-              <span className="font-bold text-emerald-800 xl:text-3xl">
+              <p className="font-bold text-emerald-800 xl:text-3xl">
                 lower your expenses
-              </span>{" "}
+              </p>{" "}
               today
             </p>
           </div>
