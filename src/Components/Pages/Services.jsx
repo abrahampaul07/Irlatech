@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import Layout from "./Layout";
 import { FaChevronDown } from 'react-icons/fa';
-import './Services.css';
+import '../Styles/Services.css';
 
 
-import box1Image from "../assets/box7.png"; 
-import box2Image from "../assets/box2.jpeg"; 
-import box3Image from "../assets/box3.png"; 
-import box4Image from "../assets/box6.png"; 
-import box5Image from "../assets/box5.jpeg"; 
+import box1Image from "../../assets/box7.png"; 
+import box2Image from "../../assets/box2.jpeg"; 
+import box3Image from "../../assets/box3.png"; 
+import box4Image from "../../assets/box6.png"; 
+import box5Image from "../../assets/box5.jpeg"; 
 import Footer from "./Footer";
 
 const servicesData = [

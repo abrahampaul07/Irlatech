@@ -1,19 +1,19 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home.jsx';
-import Services from './Components/Services.jsx';
-import Contact from './Components/Contact.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Components/Pages/Home.jsx';
+import Services from './Components/Pages/Services.jsx';
+import Contact from './Components/Pages/Contact.jsx';
 
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/services' element={<Services />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

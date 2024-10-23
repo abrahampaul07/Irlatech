@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; 
-import image from "../assets/i.png";
+import image from "../../assets/i.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

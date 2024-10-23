@@ -1,7 +1,7 @@
 // src/components/Home.jsx
 import React, { useEffect } from 'react';
 import Layout from './Layout';
-import video from '../assets/video.mp4';
+import video from '../../assets/video.mp4';
 
 const Home = () => {
   useEffect(() => {
