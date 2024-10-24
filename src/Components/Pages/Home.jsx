@@ -1,10 +1,10 @@
-// src/components/Home.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "./Layout";
 import video from "../../assets/video.mp4";
 
 const Home = () => {
   const videoRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Disable scrolling
@@ -12,10 +12,8 @@ const Home = () => {
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        // Allow screen to turn off
         document.body.style.overflow = "auto";
       } else {
-        // Disable scrolling again when the user returns
         document.body.style.overflow = "hidden";
       }
     };
@@ -24,30 +22,40 @@ const Home = () => {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      document.body.style.overflow = "auto"; // Re-enable scrolling on cleanup
+      document.body.style.overflow = "auto";
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
 
+  const handleVideoLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <>
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black">
+          <div className="text-white">Loading...</div>
+        </div>
+      )}
+
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className={`absolute inset-0 w-full h-full object-cover z-0 ${isLoading ? "hidden" : "block"}`}
         loop
         muted
         autoPlay
         playsInline
-        preload="metadata"
+        preload="auto" // Changed to "auto"
+        onLoadedData={handleVideoLoad} // Load event handler
       >
         <source src={video} type="video/mp4" />
       </video>
 
-      {/* Dimmer overlay */}
       <div className="absolute inset-0 bg-black opacity-70 z-10" />
 
       <Layout>
-        <div className="flex items-center justify-center h-screen"> 
+        <div className="flex items-center justify-center h-screen">
           <div className="text-center text-white">
             <h1
               className="xl:text-[50px] text-[30px] font-bold relative z-20"
@@ -72,9 +80,9 @@ const Home = () => {
               style={{ fontFamily: "Poppins, sans-serif"}}
             >
               Transforming technology to{" "}
-              <p className="font-bold text-emerald-800 xl:text-3xl">
+              <span className="font-bold text-emerald-800 xl:text-3xl">
                 lower your expenses
-              </p>{" "}
+              </span>{" "}
               today
             </p>
           </div>
