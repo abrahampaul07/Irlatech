@@ -76,9 +76,9 @@ const Home = () => {
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Transforming technology to{" "}
-              <span className="font-bold text-emerald-800 xl:text-3xl">
+              <p className="font-bold text-emerald-800 xl:text-3xl">
                 lower your expenses
-              </span>{" "}
+              </p>{" "}
               today
             </p>
           </div>
