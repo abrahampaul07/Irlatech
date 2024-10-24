@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "./Layout";
-import video from "../../assets/video.mp4";
+// import video from "../../assets/video.mp4";
+import video1 from "../../assets/video1.mp4";
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -34,12 +35,6 @@ const Home = () => {
 
   return (
     <>
-      {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black">
-          <div className="text-white">Loading...</div>
-        </div>
-      )}
-
       <video
         ref={videoRef}
         className={`absolute inset-0 w-full h-full object-cover z-0 ${isLoading ? "hidden" : "block"}`}
@@ -50,10 +45,10 @@ const Home = () => {
         preload="metadata" // Changed to "metadata"
         onLoadedData={handleVideoLoad} // Load event handler
       >
-        <source src={video} type="video/mp4" />
+        <source src={video1} type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-black opacity-70 z-10" />
+      <div className="absolute inset-0 bg-black opacity-50 z-10" />
 
       <Layout>
         <div className="flex items-center justify-center h-screen">
