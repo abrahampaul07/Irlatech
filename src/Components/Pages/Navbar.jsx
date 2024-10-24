@@ -1,7 +1,7 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import image from "../../assets/i.png";
+import "../Styles/Navbar.css"; // Import your CSS file
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +36,12 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
-              <img src={image} alt="IrlaTech logo" className="w-10 h-10" />
-              <span className="text-white text-lg"><span className='text-red-700 text-xl'>I</span>rlaTech</span>
+              <Link to="/" onClick={() => setActiveLink('Home')} className="flex items-center space-x-2">
+                <img src={image} alt="IrlaTech logo" className="w-10 h-10" />
+                <span className="text-white text-lg rocker-font">
+                  <span className='text-red-700 text-xl'>I</span>rlaTech
+                </span>
+              </Link>
             </div>
             {/* Toggle button only visible on mobile and tablet */}
             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">

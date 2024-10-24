@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Layout from "./Layout";
 import { FaChevronDown } from "react-icons/fa";
-import "../Styles/Services.css";
+import "../Styles/Services.css"; // Ensure this file has the CSS for .service-image
 
 import box1Image from "../../assets/box7.png";
 import box2Image from "../../assets/box2.jpeg";
@@ -95,7 +95,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-md mb-4"
+                    className="service-image mb-4"
                   />
                   <h2 className="text-lg font-semibold text-white">
                     {service.title}
@@ -122,7 +122,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-md mb-4"
+                    className="service-image mb-4"
                   />
                   <h2 className="text-lg font-semibold text-white">
                     {service.title}

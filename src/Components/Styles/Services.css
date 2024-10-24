@@ -39,3 +39,15 @@ body {
   scrollbar-width: thin; /* Makes the scrollbar thin */
   scrollbar-color: #5d6763 rgba(38, 38, 38, 0.4); /* Thumb and track color */
 }
+
+
+/* src/Styles/Services.css */
+
+.service-image {
+  width: 100%; /* Ensures the image takes the full width */
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 0.5rem; /* Match rounded corners */
+}
+
+/* Add any additional styles you need for the service boxes */
