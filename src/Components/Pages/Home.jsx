@@ -29,6 +29,7 @@ const Home = () => {
 
   const handleVideoLoad = () => {
     setIsLoading(false);
+    videoRef.current.play(); // Ensure the video plays once loaded
   };
 
   return (
@@ -46,7 +47,7 @@ const Home = () => {
         muted
         autoPlay
         playsInline
-        preload="auto" // Changed to "auto"
+        preload="metadata" // Changed to "metadata"
         onLoadedData={handleVideoLoad} // Load event handler
       >
         <source src={video} type="video/mp4" />
@@ -77,7 +78,7 @@ const Home = () => {
 
             <p
               className="mt-2 xl:text-2xl text-xl relative z-20 xl:hidden md:hidden block"
-              style={{ fontFamily: "Poppins, sans-serif"}}
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Transforming technology to{" "}
               <span className="font-bold text-emerald-800 xl:text-3xl">
