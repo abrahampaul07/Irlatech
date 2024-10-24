@@ -64,6 +64,7 @@ const Navbar = () => {
                 )}
               </button>
             </div>
+
             {/* Desktop links */}
             <div className="hidden sm:block sm:ml-auto">
               <div className="flex space-x-4">
@@ -87,12 +88,38 @@ const Navbar = () => {
         </div>
 
         {/* Sidebar for mobile and tablet */}
-        <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={toggleMenu}></div>
-        <div className={`fixed inset-y-0 left-0 transform bg-gray-800 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:hidden w-64`}>
-          <div className="flex flex-col mt-16">
-            <Link to="/" onClick={() => { setActiveLink('Home'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Home</Link>
-            <Link to="/services" onClick={() => { setActiveLink('Services'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Services</Link>
-            <Link to="/contact" onClick={() => { setActiveLink('Contact'); toggleMenu(); }} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium">Contact</Link>
+        <div 
+          className={`fixed inset-0 bg-gray-800 bg-opacity-50 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+          onClick={toggleMenu}
+        ></div>
+        <div 
+          className={`fixed inset-y-0 left-0 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:hidden w-64 backdrop-blur-lg bg-gray-800 bg-opacity-50`}
+        >
+          <div className="flex flex-col">
+            <img src={image} alt="IrlaTech logo" className="w-20 h-20 mb-4" />
+          </div>
+          <div className="flex flex-col">
+            <Link 
+              to="/" 
+              onClick={() => { setActiveLink('Home'); toggleMenu(); }} 
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/services" 
+              onClick={() => { setActiveLink('Services'); toggleMenu(); }} 
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium"
+            >
+              Services
+            </Link>
+            <Link 
+              to="/contact" 
+              onClick={() => { setActiveLink('Contact'); toggleMenu(); }} 
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-8 py-4 rounded-md text-xl font-medium"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </nav>

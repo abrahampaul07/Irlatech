@@ -2,3 +2,9 @@
 .rocker-font {
     font-family: 'New Rocker', sans-serif; /* Use Rocker font */
   }
+
+
+  /* Custom CSS */
+.backdrop-blur-lg {
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+}
